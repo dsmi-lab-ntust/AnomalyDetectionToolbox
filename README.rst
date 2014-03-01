@@ -1,4 +1,4 @@
-Anomaly Detection Toolbox
+Anomaly Detection Toolbox - Beta
 =========================
 
 This a collection of anomaly detection algorithms. Currently they are split into three categories:
