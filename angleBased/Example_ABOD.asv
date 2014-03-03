@@ -35,7 +35,7 @@ function [] = Example_ABOD()
 
     fprintf('Loading Iris dataset from UCI\n');
     fprintf('\n');
-
+    end
     load('iris.mat', '-mat');
     fprintf('Processing...\n');
     fprintf('\n');
