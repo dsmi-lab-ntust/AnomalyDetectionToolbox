@@ -1,9 +1,13 @@
 function [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n, strParam)
 % =========================================================================
+% HOTSAX is used to detect anomaly in a timeseries data.
+%
 % Accroding to the paper
 % HOT SAX: Efficiently Finding the Most Unusual Time Series Subsequence
 % Author    : Eamonn Keogh, Jessica Lin, Ada Fu
 % Programer : Po-Han Huang
+% -------------------------------------------------------------------------
+% [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n);
 % -------------------------------------------------------------------------
 % Inputs -----
 %   data               [m x 1] : Input time series sequence.
@@ -17,8 +21,10 @@ function [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n, strParam)
 % -------------------------------------------------------------------------
 % Outputs ----
 %   best_so_far_dist   [1 x 1] : The best result(or can be consider as the
-%                                 nearest distance in whole case).
-%   best_so_far_loc    [1 x 1] : The location that the best result happend.
+%                                nearest distance in whole case).
+%   best_so_far_loc    [1 x 1] : The location that the best result
+%                                happened(which means the location that
+%                                anomaly happened).
 % =========================================================================
 
 % setting up parameters
