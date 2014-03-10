@@ -10,12 +10,6 @@ normal = data.test(lof<threshold, :);
 
 
 %Visualization
-%Plot original data
-figure(1);
-cla;
-hold on;
-scatter(data.test(:, 1), data.test(:, 2), 'b');
-hold off;
 
 %Plot result, red x: outlier, blue circle: normal point
 figure(2);
