@@ -26,38 +26,38 @@ function [suspicious_index lof] = LOF(A, k)
 
 
 %Find the nearest neighbors by "KDTree" for each elements 
-[k_index, k_dist] = knnsearch(A,A,'k',k+1,'nsmethod','kdtree');
+[k_index, k_dist] = knnsearch(A,A,'k',k+1,'nsmethod','kdtree','IncludeTies',true);
 %Ignore first element(itself) at nearest neighbors 
-k_index = k_index(:,2:end);
+k_index = cellfun(@(x) x(2:end),k_index,'UniformOutput',false);
+numneigh = cellfun('length',k_index);
 %Get k-distance
-k_dist1 = k_dist(:,end);
+k_dist1 = cell2mat(cellfun(@(x) x(end),k_dist,'UniformOutput',false));
 %Get row length of matrix A
 n = length(A(:,1));
 %Initialize lrd_value vector
 lrd_value = zeros(n,1);
 %Calculate lrd for each elements
 for i = 1:n
-    lrd_value(i) = lrd(A, i, k_dist1,k_index, k);
+    lrd_value(i) = lrd(A, i, k_dist1, k_index, numneigh(i));
 end
 %Initialize lof vector
 lof = zeros(n,1);
 %Calculate LOF
 for i = 1:n
-    lof(i) = sum(lrd_value(k_index(i,:))/lrd_value(i))/k;
+    lof(i) = sum(lrd_value(k_index{i})/lrd_value(i))/numneigh(i);
 end
-%Sort lof factor
-[non,suspicious_index]=sort(lof,'descend');
+%Indices from sorting lof are the suspicious score rankings
+[~,suspicious_index]=sort(lof,'descend');
 
 
 
 %=========================================================================
-function lrd_value = lrd(A, index_p, k_dist,k_index, k)
+function lrd_value = lrd(A, index_p, k_dist,k_index, numneighbors)
 %Calculate the reachability distance for nearest neighbors
-Temp = repmat(A(index_p,:),k,1) - A(k_index(index_p,:),:);
+Temp = repmat(A(index_p,:), numneighbors, 1) - A(k_index{index_p}, :);
 Temp = sqrt(sum(Temp.^2,2));
-%max{k-distance(a), d(a, b)}
-rd_dsit = max([Temp k_dist(k_index(index_p,:))],[],2);
+reach_dist = max([Temp k_dist(k_index{index_p})],[],2);
 %Calculate the local reachability density for each elements
-lrd_value = k/sum(rd_dsit);
+lrd_value = numneighbors/sum(reach_dist);
 
 
