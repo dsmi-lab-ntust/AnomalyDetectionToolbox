@@ -116,11 +116,9 @@ function [set_map, set_index] = heuristic(symbols)
 %                         original symbol input.
 % =========================================================================
 tmp_symbols = symbols;
-%symbol_set = [];
 count = []; set_index = {};
 while ~isempty(tmp_symbols)
     symbol                         = tmp_symbols(1,:);
-    %symbol_set                     = [symbol_set; symbol];
     match_index                    = find(ismember(symbols,symbol,'rows') == 1);
     set_index{size(set_index,2)+1} = match_index;
     count                          = [count; size(match_index,1)];
