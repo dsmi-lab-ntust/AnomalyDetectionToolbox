@@ -1,6 +1,6 @@
 function [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n, strParam)
 % =========================================================================
-% Accroding to the paper
+% According to the paper
 % HOT SAX: Efficiently Finding the Most Unusual Time Series Subsequence
 % Author    : Eamonn Keogh, Jessica Lin, Ada Fu
 % Programmer : Po-Han Huang
