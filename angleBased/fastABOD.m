@@ -2,7 +2,7 @@ function [suspicious_index abof] = fastABOD(A,n_k)
 %#####################################################################
 %# Angle Based Outlier Detection                                     #
 %# Authors: Hans-Peter, Kriegel Matthias, Schubert Arthur Zimek      #
-%# Oringinal paper :                                                 #
+%# Original paper :                                                  #
 %# Angle-Based Outlier Detection in High-dimensional Data In KDD2008 #
 %# Website : http://www.dbs.ifi.lmu.de/                              #
 %# e-mail : {kriegel,schubert,zimek}@dbs.ifi.lmu.de                  #

@@ -93,7 +93,7 @@ pointers      = [];                                 % Initialize pointers,
 symbolic_data = zeros(1,n);                         % Initialize symbolic_data with a void string, it will be removed later.
 all_string    = zeros(length(data)-N+1,n);
 
-% Scan accross the time series extract sub sequences, and converting them to strings.
+% Scan across the time series extract sub sequences, and converting them to strings.
 for i = 1 : length(data) - (N -1)                                       
     
     if mod(i, 1000) == 0
