@@ -5,7 +5,7 @@ function [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n, strParam)
 % Accroding to the paper
 % HOT SAX: Efficiently Finding the Most Unusual Time Series Subsequence
 % Author    : Eamonn Keogh, Jessica Lin, Ada Fu
-% Programer : Po-Han Huang
+% Programmer : Po-Han Huang
 % -------------------------------------------------------------------------
 % [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n);
 % -------------------------------------------------------------------------
@@ -16,15 +16,13 @@ function [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n, strParam)
 %     .nseg            [1 x 1] : nseg is the number of symbols in the low
 %                                dimensional approximation of the sub
 %                                sequence while making symbols using SAX.
-%     .a               [1 x 1] : alphabat size is the number of discrete
+%     .a               [1 x 1] : alphabet size is the number of discrete
 %                                symbols.
 % -------------------------------------------------------------------------
 % Outputs ----
 %   best_so_far_dist   [1 x 1] : The best result(or can be consider as the
-%                                nearest distance in whole case).
-%   best_so_far_loc    [1 x 1] : The location that the best result
-%                                happened(which means the location that
-%                                anomaly happened).
+%                                 farthest distance in whole case).
+%   best_so_far_loc    [1 x 1] : The location of the discord.
 % =========================================================================
 
 % setting up parameters
@@ -55,7 +53,7 @@ for map_idx = 2:size(set_map,1)
 end
 p_seq_size  = length(p_seq);
 mc_set_size = length(set_index{set_map(1)}); % min count set size
-% after walk though the mincount set, randon walk the rest
+% after walk though the mincount set, random walk the rest
 p_seq = [p_seq(1:mc_set_size);
          p_seq(randsample(1+mc_set_size:p_seq_size,p_seq_size-mc_set_size))];
 % -------------------------------------------------------------------------
@@ -80,7 +78,7 @@ for p_idx = 1:size(p_seq) % ---------------------------------- % Outer Loop
     end
     q_seq_size = length(q_seq);
     qs_set_size = length(set_index{set_map(q_start_set)}); % q start set size
-    % after walk though the q start set, randon walk the rest
+    % after walk though the q start set, random walk the rest
     q_seq = [q_seq(1:qs_set_size);
              q_seq(randsample(1+qs_set_size:q_seq_size,q_seq_size-qs_set_size))];
     % ---------------------------------------------------------------------
