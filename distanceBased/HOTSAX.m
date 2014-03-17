@@ -47,12 +47,17 @@ best_so_far_loc  = NaN;
 
 % ----making p sequence----------------------------------------------------
 % the first element in p_seq is the mincount set
-p_seq = set_index{set_map(1)};
-for map_idx = 2:size(set_map,1)
+p_seq = [];
+for map_idx = 1:size(set_map,1)
     p_seq = [p_seq; set_index{set_map(map_idx)}];
 end
 p_seq_size  = length(p_seq);
-mc_set_size = length(set_index{set_map(1)}); % min count set size
+mc_set_size = 0;
+for tmp_idx = 1:size(set_map,1)
+    if length(set_index{set_map(tmp_idx)}) == length(set_index{set_map(1)})
+        mc_set_size = mc_set_size + length(set_index{set_map(tmp_idx)});
+    end
+end
 % after walk though the mincount set, random walk the rest
 p_seq = [p_seq(1:mc_set_size);
          p_seq(randsample(1+mc_set_size:p_seq_size,p_seq_size-mc_set_size))];
@@ -120,11 +125,9 @@ function [set_map, set_index] = heuristic(symbols)
 %                         original symbol input.
 % =========================================================================
 tmp_symbols = symbols;
-%symbol_set = [];
 count = []; set_index = {};
 while ~isempty(tmp_symbols)
     symbol                         = tmp_symbols(1,:);
-    %symbol_set                     = [symbol_set; symbol];
     match_index                    = find(ismember(symbols,symbol,'rows') == 1);
     set_index{size(set_index,2)+1} = match_index;
     count                          = [count; size(match_index,1)];
