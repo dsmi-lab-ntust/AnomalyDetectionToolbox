@@ -27,21 +27,19 @@ function [suspicious_index abof] = fastABOD(A,n_k)
 %#   1. each value in output abof was normalized to [0, 1]           #
 %#   2. if input n_k == N - 1, then the effect is equal to ABOD      #
 %#####################################################################
-n=length(A(:,1));
+n=size(A, 1);
 var_array=zeros(n,1);
+
+[k_index, ~] = knnsearch(A,A,'k',n_k+1,'nsmethod','kdtree','IncludeTies',true);
+k_index = cellfun(@(x) x(2:end),k_index,'UniformOutput',false);
 for i=1:n
     var_front=0;
     var_back=0;
     denominator=0;
-    Temp = repmat(A(i,:),n,1)-A;
-    Temp = sum(Temp.^2,2);
-    [non, index] = sort(Temp);
-    clear non
-    index = index(2:n_k+1);
-    index = index';
+    index = k_index{i};
     count = 0;
     for j=index
-        count = count +1;
+        count = count+1;
         for k=index(count+1:end)
             vector1=A(j,:)-A(i,:);
             vector2=A(k,:)-A(i,:);
