@@ -1,18 +1,38 @@
-%load testing data from HOTSAX_data.mat
-%which will load "data" and "n" that used in HOTSAX below
-%in this case "data" is a timeseries data which size is 1000
-%this "data" is part of Space Shuttle dataset
-%"n" is the window size we use in SAX(or so called timeseries2symbol)
-load HOTSAX_data
-
-%in this demo, we only use best_so_far_loc while we plot the figure
-[best_so_far_dist, best_so_far_loc] = HOTSAX(data, n);
-
-%plot the figure
 clf
 hold on;
-plot(data);
+x = 0:0.01:8*pi;
+data = [x', sin(x)'];
+plot(data(:,1), data(:,2));
+axis([0, 8*pi, -3, 3]);
+legend('original data');
+grid on;
+
+pause;
+
+clf
+hold on;
+
+data_length = length(data)
+for idx = 1500:2000
+    data(idx,2) = cos(data(idx,1));
+end;
+plot(data(:,1), data(:,2));
+axis([0, 8*pi, -3, 3]);
+legend('human modified data');
+grid on;
+
+pause;
+
+%in this demo, we only use best_so_far_loc while we plot the figure
+n = 500;
+[best_so_far_dist, best_so_far_loc] = HOTSAX(data(:,2), n, 'nseg 4')
+
+%plot the figure
+hold on;
 if ~isnan(best_so_far_loc)
-    plot(best_so_far_loc:best_so_far_loc+n,data(best_so_far_loc:best_so_far_loc+n), 'r');
+    plot_x = data(best_so_far_loc:best_so_far_loc+n, 1);
+    plot_y = data(best_so_far_loc:best_so_far_loc+n, 2);
+    plot(plot_x,plot_y, 'r');
+    legend('human modified data', 'anomaly detect');
 end
 hold off;
