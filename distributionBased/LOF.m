@@ -55,7 +55,7 @@ function lrd_value = lrd(A, index_p, k_dist,k_index, k)
 %Calculate the reachability distance for nearest neighbors
 Temp = repmat(A(index_p,:),k,1) - A(k_index(index_p,:),:);
 Temp = sqrt(sum(Temp.^2,2));
-%max{k-distance(a), d(a, b)}
+%max{k-distance(b), d(a, b)}
 rd_dsit = max([Temp k_dist(k_index(index_p,:))],[],2);
 %Calculate the local reachability density for each elements
 lrd_value = k/sum(rd_dsit);
