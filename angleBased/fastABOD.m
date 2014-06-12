@@ -30,13 +30,16 @@ function [suspicious_index abof] = fastABOD(A,n_k)
 n=size(A, 1);
 var_array=zeros(n,1);
 
-[k_index, ~] = knnsearch(A,A,'k',n_k+1,'nsmethod','kdtree','IncludeTies',true);
-k_index = cellfun(@(x) x(2:end),k_index,'UniformOutput',false);
 for i=1:n
     var_front=0;
     var_back=0;
     denominator=0;
-    index = k_index{i};
+    Temp = repmat(A(i,:),n,1)-A;
+    Temp = sum(Temp.^2,2);
+    [non, index] = sort(Temp);
+    clear non
+    index = index(2:n_k+1);
+    index = index';
     count = 0;
     for j=index
         count = count+1;
