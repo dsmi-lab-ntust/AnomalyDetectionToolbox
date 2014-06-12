@@ -1,4 +1,4 @@
-function [ data ] = PointAnomalyGen( k,d,c,rangeOfMU,rangeOfSIGMA,noa )
+function [ data,labels ] = PointAnomalyGen( k,d,c,rangeOfMU,rangeOfSIGMA,noa )
 %#####################################################################
 %# Synthetic Data Generator for Point Anomaly                        #
 %# Programers: Jing-Yao Lin                                          #
@@ -8,14 +8,16 @@ function [ data ] = PointAnomalyGen( k,d,c,rangeOfMU,rangeOfSIGMA,noa )
 %#                                                                   #
 %# Inputs                                                            #
 %#   k: Number of normal output points                               #
+%# (optional)                                                        #
 %#   d: Dimensionality of output points                              #
 %#   c: Number of distributions                                      #
-%#   rangeOfMU: The range of random mean of the Gaussian             #
+%#   rangeOfMU: The range of random mean of the Gaussian(optional)   #
 %#   rangeOfSIGMA: The range of random variance of the Gaussian      #
 %#   noa: Number of Anomalies in Output Points                       #
 %#                                                                   #
 %# Outputs                                                           #
-%#   data: the output of synthetic data                              #
+%#   data: the output of synthetic data, where the dimensionality    #
+%#   will be (k+noa)¡ÑD.
 %#                                                                   #
 %# Example:                                                          #
 %#   PointAnomalyGen( 1000,100,5,[-10 10] ,[1 8]);                   #
@@ -73,6 +75,5 @@ function [ data ] = PointAnomalyGen( k,d,c,rangeOfMU,rangeOfSIGMA,noa )
         plot(data(end-noa:end,1),data(end-noa:end,2),'r.');
     end 
     labels = [zeros(k,1); ones(noa,1)];
-    data=[data labels];
 end
 
