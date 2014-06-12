@@ -29,32 +29,41 @@ if k < 1
     [numrows ~] = size(A);
     k = round(k*numrows);
 end
-
-%Find the nearest neighbors by "KDTree" for each elements 
-[k_index, k_dist] = knnsearch(A,A,'k',k+1,'nsmethod','kdtree','IncludeTies',true);
-%Ignore first element(itself) at nearest neighbors 
-k_index = cellfun(@(x) x(2:end),k_index,'UniformOutput',false)
-numneigh = cellfun('length',k_index);
-%Get k-distance
-k_dist1 = cell2mat(cellfun(@(x) x(end),k_dist,'UniformOutput',false));
-%Get row length of matrix A
-n = length(A(:,1));
-%Initialize lrd_value vector
-lrd_value = zeros(n,1);
-%Calculate lrd for each elements
-for i = 1:n
-    lrd_value(i) = lrd(A, i, k_dist1, k_index, numneigh(i));
+ 
+try
+    %Find the nearest neighbors by "KDTree" for each elements
+    [k_index, k_dist] = knnsearch(A,A,'k',k+1,'nsmethod','kdtree','IncludeTiess',true);
+    %Ignore first element(itself) at nearest neighbors 
+    k_index = cellfun(@(x) x(2:end),k_index,'UniformOutput',false);
+    numneigh = cellfun('length',k_index);
+    %Get k-distance
+    k_dist1 = cell2mat(cellfun(@(x) x(end),k_dist,'UniformOutput',false));
+    %Get row length of matrix A
+    n = length(A(:,1));
+    %Initialize lrd_value vector
+    lrd_value = zeros(n,1);
+    %Calculate lrd for each elements
+    for i = 1:n
+        lrd_value(i) = lrd(A, i, k_dist1, k_index, numneigh(i));
+    end
+    %Initialize lof vector
+    lof = zeros(n,1);
+    %Calculate LOF
+    for i = 1:n
+        lof(i) = sum(lrd_value(k_index{i})/lrd_value(i))/numneigh(i);
+    end
+    %Indices from sorting lof are the suspicious score rankings
+    [~,suspicious_index]=sort(lof,'descend');
+    
+catch err
+    if (strcmp(err.message, 'Invalid parameter name: IncludeTies.'))
+        warning('MATLAB:LOF', 'Matlab not newest version? Falling back to old version.')
+        [suspicious_index lof] = LOF_old(A, k);
+    else
+        rethrow(err)
+    end
+    
 end
-%Initialize lof vector
-lof = zeros(n,1);
-%Calculate LOF
-for i = 1:n
-    lof(i) = sum(lrd_value(k_index{i})/lrd_value(i))/numneigh(i);
-end
-%Indices from sorting lof are the suspicious score rankings
-[~,suspicious_index]=sort(lof,'descend');
-
-
 
 %=========================================================================
 function lrd_value = lrd(A, index_p, k_dist,k_index, numneighbors)
