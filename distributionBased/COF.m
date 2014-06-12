@@ -8,7 +8,8 @@ function [suspicious_index cof sbn_paths] = COF(A, k)
 %#                                                                        #
 %# Inputs                                                                 #
 %#   A: the data matrix, each row represents an instance                  #
-%#   k: the number of nearest neighbors                                   #
+%#   k: the number of nearest neighbors, specified as an integer or       #
+%#      as a fraction of the total number of data points                  #
 %#                                                                        #
 %# Outputs                                                                #
 %#   lof: the local outlier factor for each instance                      #
@@ -17,6 +18,11 @@ function [suspicious_index cof sbn_paths] = COF(A, k)
 %#                     For example, suspicious_index(i)=j means the       #
 %#                     ith instance is in jth position in the ranking     #
 %##########################################################################
+
+if k < 1
+    [numrows ~] = size(A);
+    k = round(k*numrows);
+end
 
 %Find the nearest neighbors by "KDTree" for each elements 
 [k_index, ~] = knnsearch(A,A,'k',k+1,'nsmethod','kdtree','IncludeTies',true);

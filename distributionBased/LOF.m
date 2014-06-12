@@ -14,7 +14,8 @@ function [suspicious_index lof] = LOF(A, k)
 %#                                                                   #
 %# Inputs                                                            #
 %#   A: the data matrix, each row represents an instance             #
-%#   k: the number of nearest neighbors                              #
+%#   k: the number of nearest neighbors, specified as an integer or  #
+%#      as a fraction of the total number of data points             #
 %#                                                                   #
 %# Outputs                                                           #
 %#   lof: the local outlier factor for each instance                 #
@@ -24,11 +25,15 @@ function [suspicious_index lof] = LOF(A, k)
 %#                     ith instance is in jth position in the ranking#
 %#####################################################################
 
+if k < 1
+    [numrows ~] = size(A);
+    k = round(k*numrows);
+end
 
 %Find the nearest neighbors by "KDTree" for each elements 
 [k_index, k_dist] = knnsearch(A,A,'k',k+1,'nsmethod','kdtree','IncludeTies',true);
 %Ignore first element(itself) at nearest neighbors 
-k_index = cellfun(@(x) x(2:end),k_index,'UniformOutput',false);
+k_index = cellfun(@(x) x(2:end),k_index,'UniformOutput',false)
 numneigh = cellfun('length',k_index);
 %Get k-distance
 k_dist1 = cell2mat(cellfun(@(x) x(end),k_dist,'UniformOutput',false));
