@@ -45,17 +45,17 @@ function [ data,labels ] = PointAnomalyGen( k,d,c,rangeOfMU,rangeOfSIGMA,noa )
         c=5;
     end    
     if nargin<4
-        MU = rand(5,d)*10;  
+        MU = rand(c,d)*10;  
         
     else
-        MU = rand(5,d)*(rangeOfMU(2)-rangeOfMU(1))+rangeOfMU(1);    
+        MU = rand(c,d)*(rangeOfMU(2)-rangeOfMU(1))+rangeOfMU(1);    
     end
     if nargin<5
         rangeOfMU = [1 10];
 %         SIGMA = rand(1,d,5)*(rangeOfMU(2)-rangeOfMU(1)).^0.5;
-        SIGMA = rand(1,d,5)*(rangeOfMU(2)-rangeOfMU(1))*0.25;
+        SIGMA = rand(1,d,c)*(rangeOfMU(2)-rangeOfMU(1))*0.25;
     else
-        SIGMA = rand(1,d,5)*(rangeOfSIGMA(2)-rangeOfSIGMA(1))+rangeOfSIGMA(1);
+        SIGMA = rand(1,d,c)*(rangeOfSIGMA(2)-rangeOfSIGMA(1))+rangeOfSIGMA(1);
          
     end    
     if nargin<6
