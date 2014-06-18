@@ -32,7 +32,7 @@ end
  
 try
     %Find the nearest neighbors by "KDTree" for each elements
-    [k_index, k_dist] = knnsearch(A,A,'k',k+1,'nsmethod','kdtree','IncludeTiess',true);
+    [k_index, k_dist] = knnsearch(A,A,'k',k+1,'nsmethod','kdtree','IncludeTies',true);
     %Ignore first element(itself) at nearest neighbors 
     k_index = cellfun(@(x) x(2:end),k_index,'UniformOutput',false);
     numneigh = cellfun('length',k_index);
