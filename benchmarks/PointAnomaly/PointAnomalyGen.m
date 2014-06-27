@@ -17,7 +17,7 @@ function [ data,labels ] = PointAnomalyGen( k,d,c,rangeOfMU,rangeOfSIGMA,noa )
 %#                                                                   #
 %# Outputs                                                           #
 %#   data: the output of synthetic data, where the dimensionality    #
-%#   will be (k+noa)¡ÑD.
+%#   will be (k+noa)¡ÑD.                                              #
 %#                                                                   #
 %# Example:                                                          #
 %#   PointAnomalyGen( 1000,100,5,[-10 10] ,[1 8]);                   #
