@@ -12,17 +12,17 @@ function [origin_ldof] =  LDOF(X, K)
 %# Time Complexity : O(n^2)                                          #
 %# Inputs                                                            #
 %#   A: Represent NxM data                                           #
-%#      N is number of instance                                      #
-%#      M is number of feature                                       #
+%#      N is number of instances                                     #
+%#      M is number of features                                      #
 %#   K: for knn                                                      #
 %# Outputs                                                           #
 %#   ldof: Nx1 vector                                                #
-%#      ldof value for each instance, means how a instance like a    #
-%#      an outliers. If the ldof < 0.5 then that instance never be a #
-%#      an outlier.                                                  #
+%#      ldof value for each instance, means the degree to which an   #
+%#      instance is considered an outlier. If the ldof < 0.5 then    #
+%#      that instance is not considered an outlier.                  #
 %# Note                                                              #
-%#   Time Complexity is prigin paper is O(n * ln(n)), but that       #
-%#   requires kd-tree implementation.                                #
+%#   Time Complexity in original paper is O(n * ln(n)), but that     #
+%#   requires a kd-tree implementation.                              #
 %#####################################################################
     [X, ia, ic] = unique(X,'rows');
     instance_number = size(ia, 1);
