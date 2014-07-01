@@ -33,11 +33,21 @@ function [ scores ] = kolmogorovEstimator( normalDataCell,unseenDataCell )
  normalSeq_Z = dzip(normalSeq);
  infor_o = whos('normalSeq_Z'); 
  for i = 1:size(unseenDataCell,1)     
-     targetSeq = [normalSeq  unseenDataCell{i}];
+     if iscell(unseenDataCell)
+         targetSeq = [normalSeq  unseenDataCell{i}];
+     else
+         targetSeq = [normalSeq  unseenDataCell];
+     end
+     
      targetSeq_Z = dzip(targetSeq);
      infor_u = whos('targetSeq_Z'); 
      tempScores=infor_u.bytes-infor_o.bytes;      
-     tempScores=tempScores/size(unseenDataCell{i},2);
+     
+     if iscell(unseenDataCell)
+         tempScores=tempScores/size(unseenDataCell{i},2);
+     else
+         tempScores=tempScores/size(unseenDataCell,2);
+     end
      scores(i) = tempScores; 
  end
  
