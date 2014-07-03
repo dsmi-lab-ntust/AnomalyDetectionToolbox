@@ -77,7 +77,7 @@ h1.title {
 }
 
 .wrapper {
-  width: 675px;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -451,9 +451,9 @@ footer .owner p a {
 }
 
 .markdown-body table {
-  width: 673px;
-  margin-left: -20px;
-  margin-right: -20px;
+  width: 90%;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .markdown-body tbody {
@@ -472,21 +472,27 @@ footer .owner p a {
   padding: 5px;
 }
 
-.markdown-body td:first-child,
-.markdown-body th:first-child {
-  width: 30%;
-  padding-left: 20px;
-}
-
-.markdown-body td:last-child {
-  border-right: 0 none;
-}
-
 .markdown-body th {
   font-size: 18px;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   padding: 5px;
+  vertical-align : middle;
+  border-right: 1px solid #557398;
+  border-bottom: 1px solid #557398;
+}
+
+/**
+.markdown-body td:first-child,
+.markdown-body th:first-child {
+  width: 20%;
+  padding-left: 20px;
+}
+**/
+
+.markdown-body td:last-child,
+.markdown-body th:last-child{
+  border-right: 0 none;
 }
 
 .markdown-body tt {
@@ -520,6 +526,17 @@ footer .owner p a {
 .markdown-body img {
   max-width: 100%;
   @include box-sizing(border-box);
+}
+
+.Benchmark a,
+.Algorithm a{
+  color: #63a52a;
+  text-decoration: none;
+  -webkit-transition: color ease-in-out 0.3s;
+}
+
+#smallwindow{
+	position:absolute;
 }
 
 .highlight  { background: #ffffff; }
