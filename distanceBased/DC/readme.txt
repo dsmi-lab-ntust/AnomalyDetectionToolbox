@@ -1,0 +1,1 @@
+DC is used to detect anomaly in a very large timeseries data. It detects outliers (or discord) cross dataset files. DC_example.m shows the usage of this method.
