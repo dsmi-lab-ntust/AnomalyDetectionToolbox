@@ -15,10 +15,10 @@ function [ scores ] = Example_kolmogorovEstimator(  )
 %#                                                                   #
 %#####################################################################
 
-fid = fopen('..\benchmarks\CollectiveAnomaly\Pfam\PfamData_Normal');
+fid = fopen('..\..\benchmarks\CollectiveAnomaly\Pfam\PfamData_Normal');
 pfamNormal = textscan(fid,'%s');
 pfamNormal=pfamNormal{1};
-fid = fopen('..\benchmarks\CollectiveAnomaly\Pfam\PfamData_Testing');
+fid = fopen('..\..\benchmarks\CollectiveAnomaly\Pfam\PfamData_Testing');
 pfamTest = textscan(fid,'%s');
 pfamTest=pfamTest{1};
 fclose all;
