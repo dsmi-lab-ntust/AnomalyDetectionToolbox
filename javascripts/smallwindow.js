@@ -2,7 +2,7 @@ document.ready = function(){
 	var createDiv=document.createElement("div");
 	createDiv.id="smallwindow";
 	document.body.appendChild(createDiv);
-	createDiv.innerHTML = "testpage";
+	createDiv.innerHTML = "testpage1";
 	openwindow();
 };
 
