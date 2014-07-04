@@ -535,8 +535,13 @@ footer .owner p a {
   -webkit-transition: color ease-in-out 0.3s;
 }
 
-#smallwindow{
+.detailwindow{
 	position:absolute;
+	overflow:hidden;
+	background:rgba(200,200,255,.9);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 .highlight  { background: #ffffff; }
