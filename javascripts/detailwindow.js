@@ -25,8 +25,8 @@ function opendetail(name,target){
 
         obj = obj.offsetParent;
     }
-	detailwindow.style.top = absolute_top+target.offsetHeight+'px';
-	detailwindow.style.left = absolute_left+target.offsetWidth+'px';
+	detailwindow.style.top = tempY+'px';
+	detailwindow.style.left = tempX+'px';
 	detailwindow.style.width = '300px';
 	detailwindow.style.height = '200px';
 	detailwindow.firstChild.style.display = 'inline';
