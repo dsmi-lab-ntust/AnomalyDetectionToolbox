@@ -69,3 +69,39 @@ function getMouseXY(e) {
   if (tempY < 0){tempY = 0} 
   return true
 }
+
+function changeDoc(page_name,active_name,target_name,id){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+		// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	}
+	else{
+	// code for IE6, IE5
+	  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+	xmlhttp.onreadystatechange = function(){
+		if(xmlhttp.readyState==4 && xmlhttp.status==200){
+			if(!target_name){
+				target_name = "main_article";
+			}
+			document.getElementById(target_name).innerHTML = xmlhttp.responseText;
+			if(active_name){
+				var active_li = document.getElementById(active_name);
+				var childNodes = active_li.parentNode.childNodes;
+				for(x in childNodes){
+					childNodes[x].className = "";
+				}
+				active_li.className = "active";
+			}
+			if(id){
+				location.hash = "#"+id;
+				location = location;
+			}
+		}
+	}
+	xmlhttp.open("GET",page_name,true);
+	xmlhttp.send();
+}
+changeDoc("Introduction.html","Introduction");
