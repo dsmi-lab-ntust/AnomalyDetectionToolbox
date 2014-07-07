@@ -159,7 +159,7 @@ p.tagline {
 }
 
 .download-bar .avatar {
-  border: 1px solid black;
+  border: 
   display: block;
   padding: 4px;
   float: left;
@@ -709,17 +709,22 @@ footer .owner p a {
 #cssmenu ul li.active > a {
   color: #ffffff;
 }
-#benchmark_wrapper{
+#benchmark_wrapper,
+#algorithm_wrapper
+{
 	width:2000px;
 }
 
-#benchmark_menu{
+#benchmark_menu,
+#algorithm_menu{
 	width:200px;
 	float:left;
 	display:inline;
+	border-right:1px solid black;;
 }
 
-#benchmark_page{
+#benchmark_page,
+#algorithm_page{
 	width:900px;
 	float:left;
 	display:inline;
