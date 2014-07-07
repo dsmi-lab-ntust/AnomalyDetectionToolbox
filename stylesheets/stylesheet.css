@@ -719,9 +719,9 @@ footer .owner p a {
 	width:200px;
 	float:left;
 	display:inline;
-	border-right:2px solid black;
-	margin-right:5px;
-	padding-right:5px;
+	border-right:1px solid black;
+	margin-right:20px;
+	padding-right:20px;
 }
 
 #benchmark_page,
