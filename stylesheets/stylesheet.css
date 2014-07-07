@@ -43,7 +43,6 @@ q:before, q:after {
   content: none;
 }
 table {
-	width:2000px;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
@@ -720,7 +719,9 @@ footer .owner p a {
 	width:200px;
 	float:left;
 	display:inline;
-	border-right:5px solid black;;
+	border-right:2px solid black;
+	margin-right:5px;
+	padding-right:5px;
 }
 
 #benchmark_page,
