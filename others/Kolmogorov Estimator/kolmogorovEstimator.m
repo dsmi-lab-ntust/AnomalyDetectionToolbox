@@ -1,7 +1,7 @@
 function [ scores ] = kolmogorovEstimator( normalDataCell,unseenDataCell )
 %#####################################################################
-%# Kolmogorov Estimator                        #
-%# Programers: Jing-Yao Lin                                          #
+%# Kolmogorov Estimator                                              #
+%# Programmers: Jing-Yao Lin                                         #
 %#                                                                   #
 %# Please send comments and suggestions to                           #
 %# "jyl.ntust@gmail.com"                                             #
@@ -20,7 +20,7 @@ function [ scores ] = kolmogorovEstimator( normalDataCell,unseenDataCell )
 %#   Kolmogorov complexity indicates the possible shortest length of #
 %#   compressed representation of language. Assume the string length #
 %#   LZ77 represents the Kolmogorov complexity of a symbolic         #
-%#   sequence, the Kolmogorov complexity will be abnormal after      #
+%#   sequence, the Kolmogorov complexity will be greater after       #
 %#   an anomalous symbolic sequence joins the regular symbolic       #
 %#   sequence family. The output score then indicates the            #
 %#   anomalous-ness of a unseen sequence.                            #

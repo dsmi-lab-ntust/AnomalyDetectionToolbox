@@ -1,17 +1,17 @@
 function [ scores ] = Example_kolmogorovEstimator(  )
 %#####################################################################
-%# Example of Kolmogorov Estimator                        #
-%# Programers: Jing-Yao Lin                                          #
+%# Example of Kolmogorov Estimator                                   #
+%# Programmers: Jing-Yao Lin                                         #
 %#                                                                   #
 %# Please send comments and suggestions to                           #
 %# "jyl.ntust@gmail.com"                                             #
 %#                                                                   #
 %# Outputs                                                           #
-%#   scores: the score indicates the anomalous-ness of the           #
-%#   pfam testing sequence                                           #
+%#   scores: the score indicates the degree to which the Pfam testing#
+%#   sequence is considered an anomaly                               #
 %#                                                                   #
-%#   This example will compute the anomalous-ness of the Pfam        #
-%#   pretein sequences in testing set.                               #
+%#   This example will compute anomaly score for the Pfam            #
+%#   protein sequences in the testing set.                           #
 %#                                                                   #
 %#####################################################################
 
