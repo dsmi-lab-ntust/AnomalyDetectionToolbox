@@ -1,0 +1,29 @@
+<p>Dataset Synthetic</p>
+
+Description
+<table class="infoTable">
+<tr><td colspan="3">Assume '0' is normal label</td></tr>
+<tr><td>2000</td><td>normal objects</td>
+<td rowspan="3">For point anomaly, we provide synthetic data 
+generator of point anomaly, Our synthetic data 
+generator will produce normal points under 
+Gaussian mixture distribution with random 
+means and random variances in high 
+dimensionality space, and consider points 
+generated from uniform distribution as point 
+anomaly.
+</td></tr>
+<tr><td>10</td><td>anomalous object</td></tr>
+<tr><td>50</td><td>features</td></tr>
+</table>
+
+Results
+<table>
+<tr><td>Detector</td><td>Parameters</td><td>AUC</td></tr>
+<tr><td>COF</td><td>k=5</td><td>1</td></tr>
+<tr><td>LOF</td><td>k=5</td><td>1</td></tr>
+<tr><td>LDOF</td><td>k=11</td><td>0.7488</td></tr>
+<tr><td>OD_WPCA</td><td>ratio=0.9</td><td>0.7775</td></tr>
+<tr><td>OD_onlinePCA</td><td>beta=0.1</td><td>0.1628</td></tr>
+<tr><td>fastABOD</td><td>k=5</td><td>1</td></tr>
+</table>
