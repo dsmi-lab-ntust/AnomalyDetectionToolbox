@@ -1,4 +1,4 @@
-For contextual anomaly, we queried climate data from NOAA's National Climatic Data Center (NCDC). This data set records the climate data from the station of Taiwan. We provide a program to perturb the climate data contextual to convert normal data to contextual anomalies inside. This program will switch temperatures of different seasons as contextual anomallies. This dataset also includes nature point anomalies that, missing value will be set as 1000.
+For contextual anomaly, we queried climate data from NOAA's National Climatic Data Center (NCDC). This data set records the climate data from the station of Taiwan. We perturb the climate data contextual to convert normal data to contextual anomalies inside. This processing will switch temperatures of different seasons as contextual anomalies. 
 
 With WMO Resolution 40 NOAA Policy, this data set cannot be redistributed for commercial purposes. Re-distribution of these data by others must provide this same notification.
 For details, please consult:
