@@ -1,1 +1,28 @@
-Wine Quality
+<p>Dataset Wine Quality</p>
+
+Description
+<table class="infoTable">
+<tr><td colspan="3">Assume '0' is normal label</td></tr>
+<tr><td>2199</td><td>normal objects</td>
+<td rowspan="3">This dataset is modified from Wine Quality Data Set 
+(<a href="https://archive.ics.uci.edu/ml/datasetd/Wine=Quality">https://archive.ics.uci.edu/ml/datasetd/Wine=Quality</a>).
+Suppose the wines which quality equal to 6 as normal, 
+and others should be normal. There 95% of wines are 
+normal in this dataset, your anomaly detection 
+algorithms should not 
+tell wines of label "1" as normal.
+</td></tr>
+<tr><td>105</td><td>anomalous object</td></tr>
+<tr><td>11</td><td>features</td></tr>
+</table>
+
+Results
+<table>
+<tr><td>Detector</td><td>Parameters</td><td>AUC</td></tr>
+<tr><td>COF</td><td>k=5</td><td>0.5360</td></tr>
+<tr><td>LOF</td><td>k=5</td><td>0.5360</td></tr>
+<tr><td>LDOF</td><td>k=31</td><td>0.5460</td></tr>
+<tr><td>OD_WPCA</td><td>ratio=0.1</td><td>0.5573</td></tr>
+<tr><td>OD_onlinePCA</td><td>beta=0.9</td><td>0.5630</td></tr>
+<tr><td>fastABOD</td><td>k=5</td><td>0.5555</td></tr>
+</table>
