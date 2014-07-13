@@ -1,1 +1,6 @@
-<p>ABOD</p>
+<p>Algorithm: Angle Based Outlier Detection</p>
+<p>Authors: Hans-Peter, Kriegel Matthias, Schubert Arthur Zimek</p>
+<p>Original paper: Angle-Based Outlier Detection in High-dimensional Data In KDD2008</p>
+<p>Website: <a href="http://www.dbs.ifi.lmu.de/">http://www.dbs.ifi.lmu.de/</a></p>
+<p>Time Complexity: O(n^3)</p>
+Description: This method detects outliers in high dimensional data points by comparing ABOF of each points. Choose a point as a vertex and form angels with each two other points. Choose a point as a vertex and count cosine values with each two other points. The ABOF of that point is the variance of cosine values. If that point far away from clusters (as an outlier data), all angels are small and it's ABOF will be small. If that point is in a cluster (as a normal data), ABOF will be big.
