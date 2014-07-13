@@ -388,7 +388,7 @@ footer .owner p a {
 .markdown-body h5 {
   font-size: 16px;
 }
-
+/*
 .markdown-body pre {
   padding: 10px 70px 10px 0;
   margin-left: -20px;
@@ -413,7 +413,7 @@ footer .owner p a {
   background-color:#2a2a2a;
   color: #d6d6d6;
 }
-
+*/
 .markdown-body ul,
 .markdown-body ol {
   padding-left: 30px;
