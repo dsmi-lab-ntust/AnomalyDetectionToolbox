@@ -19,9 +19,8 @@ The analysis determined the quantities of 13 constituents found in each of the t
 
 — Number of Instances
 
-      class 1 2
-      class 2 71
-      class 3 2
+      class 0 71
+      class 1 4
 
 — For Each Attribute:
 
