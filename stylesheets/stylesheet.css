@@ -726,6 +726,7 @@ footer .owner p a {
 #algorithm_wrapper
 {
 	width:1100px;
+	display:inline-block;
 }
 
 #benchmark_menu,
