@@ -1,6 +1,6 @@
-file include 50 data instance of main kind iris
-and 3 data instance of non-main kind iris which are anomaly.
-( normal : anomaly = 95 : 5 )
+This dataset includes 50 data instances of main kind iris
+and 3 data instances of non-main kind iris which are anomaly.
+( normal : anomaly = 50 : 3 )
 ----------------------------------------------------
 |    attributes : 4     |label : 2                  |
 |1. sepal length in cm  |  1. 0(Setosa)                |
