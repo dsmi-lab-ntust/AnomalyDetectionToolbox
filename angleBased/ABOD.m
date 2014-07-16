@@ -28,6 +28,7 @@ function [suspicious_index abof] = ABOD(A)
     instance_number = size(ia, 1);
     origin_instance_number = size(ic, 1);
     var_array = zeros(instance_number, 1);
+
     for i=1:instance_number
         var_front = 0;
         var_back = 0;
