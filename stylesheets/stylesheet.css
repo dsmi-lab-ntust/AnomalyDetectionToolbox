@@ -752,7 +752,10 @@ footer .owner p a {
 }
 
 .infoTable{
-	width:500px;
+	width:700px;
+}
+.infoTable a{
+	width:14px;
 }
 .comparison_table td,
 .comparison_table th{
