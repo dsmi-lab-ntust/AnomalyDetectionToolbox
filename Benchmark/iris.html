@@ -1,1 +1,25 @@
-iris
+<p>Dataset Iris</p>
+
+Description
+<table class="infoTable">
+<tr><th colspan="3">Assume 'Iris-setosa' normal label</th></tr>
+<tr><td>50</td><td>normal objects</td>
+<td rowspan="3">This dataset of UCI repository includes 50 data 
+instances of main kind iris and 3 data instances 
+of non-main kind iris which are anomaly.
+</td></tr>
+<tr><td>3</td><td>anomalous object</td></tr>
+<tr><td>4</td><td>features</td></tr>
+</table>
+
+Results
+<table class="infoTable">
+<tr><th>Detector</th><th>Parameters</th><th>AUC</th></tr>
+<tr><td>COF</td><td>k=11</td><td>1</td></tr>
+<tr><td>LOF</td><td>k=5</td><td>1</td></tr>
+<tr><td>LDOF</td><td>k=21</td><td>1</td></tr>
+<tr><td>OD_WPCA</td><td>ratio=0.1</td><td>1</td></tr>
+<tr><td>OD_onlinePCA</td><td>beta=0.1</td><td>0.96</td></tr>
+<tr><td>ABOD</td><td>none</td><td>0.8233</td></tr>
+<tr><td>fastABOD</td><td>k=5</td><td>0.8233</td></tr>
+</table>

@@ -77,7 +77,7 @@ h1.title {
 }
 
 .wrapper {
-  width: 1500px;
+  width: 1100px;
   margin: 0 auto;
 }
 
@@ -726,7 +726,7 @@ footer .owner p a {
 #benchmark_wrapper,
 #algorithm_wrapper
 {
-	width:1500px;
+	width:1000px;
 	display:inline-block;
 }
 
@@ -742,7 +742,7 @@ footer .owner p a {
 
 #benchmark_page,
 #algorithm_page{
-	width:1100px;
+	width:600px;
 	float:left;
 	display:inline;
 	padding-left:50px;
@@ -752,7 +752,7 @@ footer .owner p a {
 }
 
 .infoTable{
-	width:800px;
+	width:500px;
 }
 .comparison_table td,
 .comparison_table th{
@@ -760,7 +760,7 @@ footer .owner p a {
 }
 .table_container{
 	display:inline-block;
-	width:1400px;
+	width:1000px;
 }
 .table_div:first-child{
 	width:300px;
@@ -771,7 +771,7 @@ footer .owner p a {
 	width:300px;
 }
 .table_div:last-child{
-	width:1100px;
+	width:700px;
 	overflow-x:scroll;
 	display:inline-block;
 	float:right;
