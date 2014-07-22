@@ -11,6 +11,7 @@ assert(size(XI,1) == 1); % pdist requires XI to be a single sample
 d=zeros(m,1); % initialize output array
 stdXI = std(XI);
 for i=1:m
+    % same as 1 - diag(corr([XI', XJ(i,:)']), 1)
     covariance = cov(XI, XJ(i,:)); covariance = covariance(1,2);
     d(i,1) = 1 - covariance/stdXI/std(XJ(i,:));
 end
