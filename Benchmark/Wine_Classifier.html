@@ -1,0 +1,29 @@
+<p>Dataset Wine Classifier</p>
+
+Description
+<table class="infoTable">
+<tr><th colspan="3">Assume 'class 2' is normal label</th></tr>
+<tr><td>71</td><td>normal objects</td>
+<td rowspan="3">
+These data are the results of a chemical analysis 
+of wines grown in the same region in Italy but 
+derived from three different cultivars.
+The analysis determined the quantities of 13 
+constituents found in each of the three types of 
+wines.
+</td></tr>
+<tr><td>4</td><td>anomalous object</td></tr>
+<tr><td>13</td><td>features</td></tr>
+<tr><th colspan="3"><img src="images/wineclassifier.png"></img></th></tr>
+</table>
+
+Results
+<table class="infoTable">
+<tr><th>Detector</th><th>Parameters</th><th>AUC</th></tr>
+<tr><td>COF</td><td>k=51</td><td>0.7359</td></tr>
+<tr><td>LOF</td><td>k=11</td><td>0.7359</td></tr>
+<tr><td>LDOF</td><td>k=11</td><td>0.6039</td></tr>
+<tr><td>OD_WPCA</td><td>ratio=0.1</td><td>0.9472</td></tr>
+<tr><td>OD_onlinePCA</td><td>beta=0.1</td><td>0.9648</td></tr>
+<tr><td>fastABOD</td><td>k=5</td><td>0.6039</td></tr>
+</table>
