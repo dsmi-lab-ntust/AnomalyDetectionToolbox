@@ -789,3 +789,7 @@ footer .owner p a {
 .introduction_list li{
 	font-size:18px;
 }
+.introduction_table th,
+.introduction_table td{
+	font-size:14px;
+}
