@@ -13,18 +13,28 @@
 <table class="comparison_table">
 	<tr><th style="border-right:1px solid rgba(0,0,0,0); border-bottom:1px solid rgba(0,0,0,0);"></th><th style="border-left:1px solid rgba(0,0,0,0); border-bottom:1px solid rgba(0,0,0,0);" class="left_top_title">Benchmark</th></tr>
 	<tr><th style="border-right:1px solid rgba(0,0,0,0); border-top:1px solid rgba(0,0,0,0);" class="left_top_title">Algorithm</th><th style="border-left:1px solid rgba(0,0,0,0); border-top:1px solid rgba(0,0,0,0);"></th></tr>
+	<!--
 	<tr><th>Angle Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/ABOD.html',null,'algorithm_page');">ABOD</a></th></tr>
 	<tr><th>Angle Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/fastABOD.html',null,'algorithm_page');">fastABOD</a></th></tr>
 	<tr><th>Distribution Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/LOF.html',null,'algorithm_page');">LOF</a></th></tr>
 	<tr><th>Distribution Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/COF.html',null,'algorithm_page');">COF</a></th></tr>
 	<tr><th>others</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/Kolmogorov_Estimator.html',null,'algorithm_page');">Kolmogorov Estimator</a></th></tr>
 	<tr><th>PCA Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/onlinePCA.html',null,'algorithm_page');">onlinePCA</a></th></tr>
-	<!--
 	<tr><th>Statistic Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/Robust_Estimators.html',null,'algorithm_page');">Robust Estimators</a></th></tr>
 	<tr><th>Statistic Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/Dynamic_Range_Checking.html',null,'algorithm_page');">Dynamic Range Checking</a></th></tr>
-	-->
 	<tr><th>Distance Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/HOTSAX.html',null,'algorithm_page');">HOTSAX</a></th></tr>
 	<tr><th>Distance Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/LDOF.html',null,'algorithm_page');">LDOF</a></th></tr>
+	<tr><th>Distance Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/DC.html',null,'algorithm_page');">DC</a></th></tr>
+	-->
+	<tr><th>Angle Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/ABOD.html',null,'algorithm_page');">ABOD</a></th></tr>
+	<tr><th>Angle Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/fastABOD.html',null,'algorithm_page');">fastABOD</a></th></tr>
+	<tr><th>Distribution Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/LOF.html',null,'algorithm_page');">LOF</a></th></tr>
+	<tr><th>Distribution Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/COF.html',null,'algorithm_page');">COF</a></th></tr>
+	<tr><th>Distance Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/LDOF.html',null,'algorithm_page');">LDOF</a></th></tr>
+	<tr><th>others</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/Kolmogorov_Estimator.html',null,'algorithm_page');">Kolmogorov Estimator</a></th></tr>
+	<tr><th>PCA Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/onlinePCA.html',null,'algorithm_page');">onlinePCA</a></th></tr>
+	<tr><th>PCA Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');">oversamplingPCA</a></th></tr>
+	<tr><th>Distance Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/HOTSAX.html',null,'algorithm_page');">HOTSAX</a></th></tr>
 	<tr><th>Distance Based</th><th class="Algorithm"><a href="javascript:void(0);" onclick="changeDoc('Algorithms.html','Algorithms');changeDoc('Algorithms/DC.html',null,'algorithm_page');">DC</a></th></tr>
 </table>
 </div>
@@ -32,25 +42,41 @@
 <table class="comparison_table">
 	<tr><th>Modified Point Anomaly</th><th>time series discords</th><th>Symbolic Sequence</th><th></th><th>Climate</th></tr>
 	<tr>
-		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/Synthetic.html',null,'benchmark_page');">Synthetic</a></th>
+		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/Synthetic.html',null,'benchmark_page');">Point Synthetic Data</a></th>
+		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/BloodDonation.html',null,'benchmark_page');">Blood Donation</a></th>
+		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/iris.html',null,'benchmark_page');">Iris</a></th>
+		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/Adult.html',null,'benchmark_page');">Adult</a></th>
+		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/Right_Scale.html',null,'benchmark_page');">Right Scale</a></th>
+		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/Wine_Quality.html',null,'benchmark_page');">Wine Quality</a></th>
 		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/ECG.html',null,'benchmark_page');">ECG</a></th>
+		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/Space_Shuttle.html',null,'benchmark_page');">Space Shuttle</a></th>
 		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/Pfam.html',null,'benchmark_page');">Pfam Protein</a></th>
 		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/WSU_CASAS.html',null,'benchmark_page');">WSU CASAS</a></th>
 		<th class="Benchmark"><a href="javascript:void(0);" onclick="changeDoc('Benchmark.html','Benchmark');changeDoc('Benchmark/Climate.html',null,'benchmark_page');">NCDC Climate Data</a></th>
 	</tr>
+	<tr><td>X</td><td><div onmouseover="opendetail('BloodDonation_ABOD',this);" onmouseout="javascript:closedetail('BloodDonation_ABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('Iris_ABOD',this);" onmouseout="javascript:closedetail('Iris_ABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>X</td><td><div onmouseover="opendetail('RightScale_ABOD',this);" onmouseout="javascript:closedetail('RightScale_ABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+	<tr><td><div onmouseover="opendetail('Synthetic_fastABOD',this);" onmouseout="javascript:closedetail('Synthetic_fastABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('BloodDonation_fastABOD',this);" onmouseout="javascript:closedetail('BloodDonation_fastABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('Iris_ fastABOD',this);" onmouseout="javascript:closedetail('Iris_ fastABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('Adult_fastABOD',this);" onmouseout="javascript:closedetail('Adult_fastABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('RightScale_fastABOD',this);" onmouseout="javascript:closedetail('RightScale_fastABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('WineQuality_fastABOD',this);" onmouseout="javascript:closedetail('WineQuality_fastABOD');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+	<tr><td><div onmouseover="opendetail('Synthetic_LOF',this);" onmouseout="javascript:closedetail('Synthetic_LOF');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('BloodDonation_LOF',this);" onmouseout="javascript:closedetail('BloodDonation_LOF');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('Iris_LOF',this);" onmouseout="javascript:closedetail('Iris_LOF');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('Adult_LOF',this);" onmouseout="javascript:closedetail('Adult_LOF');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('RightScale_LOF',this);" onmouseout="javascript:closedetail('RightScale_LOF');"><a href="javascript:void(0);">(O) detail results</a></div></td><td><div onmouseover="opendetail('WineQuality_LOF',this);" onmouseout="javascript:closedetail('WineQuality_LOF');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+	<tr><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+	<tr><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+	<tr><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>V</td><td>V</td><td>X</td></tr>
+	<tr><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+	<tr><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+	<tr><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>V</td><td>V</td><td>X</td><td>X</td><td>X</td></tr>
+	<tr><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+	<!--
 	<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
 	<tr><td><div onmouseover="opendetail('fastABOD_POINT',this);" onmouseout="javascript:closedetail('fastABOD_POINT');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
 	<tr><td><div onmouseover="opendetail('LOF_POINT',this);" onmouseout="javascript:closedetail('LOF_POINT');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
 	<tr><td><div onmouseover="opendetail('COF_POINT',this);" onmouseout="javascript:closedetail('COF_POINT');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
 	<tr><td>N/A</td><td>N/A</td><td><div onmouseover="opendetail('Kolmogorov_Pfam',this);" onmouseout="javascript:closedetail('Kolmogorov_Pfam');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>N/A</td><td>N/A</td></tr>
 	<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
-	<!--
 	<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
 	<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
-	-->
 	<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
 	<tr><td><div onmouseover="opendetail('LDOF_POINT',this);" onmouseout="javascript:closedetail('LDOF_POINT');"><a href="javascript:void(0);">(O) detail results</a></div></td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
 	<tr><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td></tr>
+	-->
 </table>
 </div>
 </div>
