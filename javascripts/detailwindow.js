@@ -9,7 +9,13 @@ function createDiv(name){
 	createDiv.id="detailwindow"+name;
 	createDiv.className="detailwindow";
 	document.body.appendChild(createDiv);
-	createDiv.innerHTML = "<iframe src=\"detail/"+name+".html\"></iframe>"
+	detailiframe = document.createElement("iframe");
+	detailiframe.setAttribute("src", "detail/"+name+".html"); 
+	createDiv.appendChild(detailiframe);
+	detailiframe.height=detailiframe.contentWindow.document.body.scrollHeight+50+"px";
+	detailiframe.width=detailiframe.contentWindow.document.body.scrollWidth+"px";
+	createDiv.style.width = detailiframe.clientWidth+"px";
+	createDiv.style.height = detailiframe.clientHeight+"px";
 	closedetail(name);
 }
 
@@ -27,8 +33,8 @@ function opendetail(name,target){
     }
 	detailwindow.style.top = tempY+'px';
 	detailwindow.style.left = tempX+'px';
-	detailwindow.style.width = '300px';
-	detailwindow.style.height = '200px';
+	//detailwindow.style.width = '300px';
+	//detailwindow.style.height = '200px';
 	detailwindow.firstChild.style.display = 'inline';
 }
 
@@ -36,8 +42,8 @@ function closedetail(name){
 	var detailwindow = document.getElementById("detailwindow"+name);
 	detailwindow.style.top = '0px';
 	detailwindow.style.left = '0px';
-	detailwindow.style.width = '0px';
-	detailwindow.style.height = '0px';
+	//detailwindow.style.width = '0px';
+	//detailwindow.style.height = '0px';
 	detailwindow.firstChild.style.display = 'none';
 }
 
