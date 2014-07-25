@@ -36,6 +36,7 @@ function opendetail(name,target){
 	//detailwindow.style.width = '300px';
 	//detailwindow.style.height = '200px';
 	detailwindow.firstChild.style.display = 'inline';
+	detailwindow.style.display = 'inline';
 }
 
 function closedetail(name){
@@ -45,6 +46,7 @@ function closedetail(name){
 	//detailwindow.style.width = '0px';
 	//detailwindow.style.height = '0px';
 	detailwindow.firstChild.style.display = 'none';
+	detailwindow.style.display = 'none';
 }
 
 // Detect if the browser is IE or not.
