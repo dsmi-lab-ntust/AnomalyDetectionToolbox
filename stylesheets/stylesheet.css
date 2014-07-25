@@ -786,3 +786,6 @@ footer .owner p a {
 .table_div:last-child .comparison_table td:first-child{
 	border-left:2px solid rgba(0,0,0,0);
 }
+.introduction_list li{
+	font-size:18px;
+}
