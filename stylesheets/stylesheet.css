@@ -793,3 +793,7 @@ footer .owner p a {
 .introduction_table td{
 	font-size:14px;
 }
+.red_word{
+	color:red;
+	font-weight:bold;
+}
