@@ -1,6 +1,11 @@
 Anomaly Detection Toolbox - Beta
 =========================
 
+Project Website:
+
+http://dsmi-lab-ntust.github.io/AnomalyDetectionToolbox/
+
+
 This a collection of anomaly detection algorithms. Currently they are split into three categories:
 
 - `angle-based methods <angleBased/angle.rst>`_,
