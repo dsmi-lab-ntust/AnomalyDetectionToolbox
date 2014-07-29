@@ -4,15 +4,14 @@ Description
 <table class="infoTable">
 <tr><th colspan="3">Assume '>50K' is normal label</th></tr>
 <tr><td>7841</td><td>normal objects</td>
-<td rowspan="3">Extraction was done by Barry Becker from the 
-1994 Census database. A set of reasonably clean 
-records was extracted using the following 
-conditions:((AAGE>16)&&(AGI>100)&& 
-(AFNLWGT>1)&&(HRSWK>0)) 
-Prediction task is to determine whether a person 
-makes over 50K a year.
+<td rowspan="3">The original task is to predict whether a person 
+makes over 50K a year or not, and we remain the persons who make over 50K a year as normal object.
+As preprocessing, we convert each categorical feature to multiple binary features.
+
+Original website: 
+<a href="https://archive.ics.uci.edu/ml/datasets/Adult" target="_blank">https://archive.ics.uci.edu/ml/datasets/Adult</a>
 </td></tr>
-<tr><td>784</td><td>anomalous object</td></tr>
+<tr><td>784</td><td>anomalous objects</td></tr>
 <tr><td>14</td><td>features</td></tr>
 <tr><th colspan="3"><img src="images/adult.png"></img></th></tr>
 </table>
@@ -20,11 +19,11 @@ makes over 50K a year.
 Results
 <table class="infoTable">
 <tr><th>Detector</th><th>Parameters</th><th>AUC</th></tr>
-<tr><td>*COF</td><td>k=5</td><td>0.9965</td></tr>
-<tr><td>*LOF</td><td>k=5</td><td>0.9965</td></tr>
-<tr><td>*LDOF</td><td>k=5</td><td>0.5188</td></tr>
-<tr><td>*OD_WPCA</td><td>ratio=0.6</td><td>0.4878</td></tr>
-<tr><td>*OD_onlinePCA</td><td>beta=0.9</td><td>0.4736</td></tr>
-<tr><td>*fastABOD</td><td>k=10</td><td>0.45</td></tr>
+<tr><td>COF</td><td>k=5</td><td>0.9965</td></tr>
+<tr><td>LOF</td><td>k=5</td><td>0.9965</td></tr>
+<tr><td>LDOF</td><td>k=5</td><td>0.5188</td></tr>
+<tr><td>OD_WPCA</td><td>ratio=0.6</td><td>0.4878</td></tr>
+<tr><td>OD_onlinePCA</td><td>beta=0.9</td><td>0.4736</td></tr>
+<tr><td>fastABOD</td><td>k=10</td><td>0.45</td></tr>
 </table>
-*convert each categorical feature to multiple binary features
+
