@@ -8,26 +8,19 @@
 		In order to compare capabilities of algorithms, we collect data sets as benchmarks to test the algorithms of toolbox. The results of experiment are summarized in criticisms. You can test your own algorithms on the benchmarks and compare to algorithms of this toolbox.
 		-->
 		In order to provide a reliable and sustainable M2M/IoT application system it is very important to identify any misbehaviors or anomalies. Such anomalies can be caused by malfunction of sensors, 
-		malicious attacks, intrusion of networks, or unusual/interesting events in the remote monitoring systems.  
-	</p>
-	<h2 id="Goal">Goal</h2>
-	<p>
-		For detecting uncertain anomaly types, we provide diverse anomaly detection algorithms in this toolbox. Each researcher can use different algorithms to find types of anomalies in their own dataset.
-		Aim at uncertain anomaly types, manual data science effort prohibits wide adoption of anomaly detection for IoT.
-		Our next step is to provide (semi)-auto algorithm selection. 
-		
-	</p>
+		malicious attacks, intrusion of networks, or unusual/interesting events in the remote monitoring systems. Different sensor will generate anomalies with different characteristics. 
+		Anomalies in IoT data of different characteristics require different types of anomaly detection algorithms. A comparison table should be provided to give a quick insight for algorithm criticism.
+	</p>	
 	<h2 id="Ingredients">Ingredients</h2>
 	<p>
-	
 		This toolbox includes 3 principle components shown as following:<br />
 		<ol> 
-			<li> Algorithms of different types </li> 
+			<li> Algorithms for different types of anomalies </li> 
 			<ul>
-				<li> Angle-based, distance-based. distribution-based, and others </li> 
+				<li> Angle-based, distance-based. distribution-based, among others </li> 
 				<li> Organized in toolbox </li> 
 			</ul>
-			<li> Benchmark: Representative Dataset </li> 
+			<li> Benchmark: Representative data sets of various anomaly types </li> 
 			<ul>
 				<li> Anomaly type: point, contextual, collective </li> 
 				<li> Input type: single/multi-sensors, single/multi-readings </li> 
@@ -38,6 +31,15 @@
 			</ul>
 		</ol> 
 		
+		
+	</p>
+	<h2 id="Goal">Goal</h2>
+	<p>
+		In the toolbox, we have developed diverse well-known anomaly detection algorithms for detecting various anomaly types. 
+		Each researcher can use different algorithms to find types of anomalies in their own dataset.
+		Aim at uncertain anomaly types, manual data science effort prohibits wide adoption of anomaly detection for IoT.
+		Given an unseen dataset, it should be a (semi)-auto algorithm selection to recommend feasible algorithms for anomaly detection. 
+		Our next step is to provide (semi)-auto algorithm selection. 
 		
 	</p>
 	<h2 id="Contact">Suggestion and Contact</h2>
