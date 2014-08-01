@@ -1,7 +1,7 @@
 document.ready = function(){
 };
 
-function createDiv(name){
+function createDiv(name,isBig){
 	if(document.getElementById("detailwindow"+name)){
 		return false;
 	}
@@ -14,13 +14,20 @@ function createDiv(name){
 	createDiv.appendChild(detailiframe);
 	detailiframe.height=detailiframe.contentWindow.document.body.scrollHeight+50+"px";
 	detailiframe.width=detailiframe.contentWindow.document.body.scrollWidth+"px";
-	createDiv.style.width = detailiframe.clientWidth+"px";
-	createDiv.style.height = detailiframe.clientHeight+"px";
+	if(isBig != 1){
+		createDiv.style.width = "200px";
+		createDiv.style.height = "100px";
+	}else{
+		//createDiv.style.width = detailiframe.clientWidth+"px";
+		//createDiv.style.height = detailiframe.clientHeight+"px";
+		createDiv.style.width = "300px";
+		createDiv.style.height = "200px";
+	}
 	closedetail(name);
 }
 
-function opendetail(name,target){
-	createDiv(name);
+function opendetail(name,target,isBig){
+	createDiv(name,isBig);
 	var detailwindow = document.getElementById("detailwindow"+name);
 	var absolute_left = 0;
     var absolute_top  = 0;

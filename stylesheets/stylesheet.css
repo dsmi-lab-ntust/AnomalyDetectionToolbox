@@ -759,7 +759,10 @@ footer .owner p a {
 }
 .comparison_table td,
 .comparison_table th{
-	height:60px;
+	height:50px;
+	font-size:16px;
+	text-align:center;
+	vertical-align:middle;
 }
 .table_container{
 	display:inline-block;
@@ -780,7 +783,7 @@ footer .owner p a {
 	float:right;
 }
 .table_div:last-child .comparison_table{
-	width:1300px;
+	width:1500px;
 }
 .table_div:last-child .comparison_table th:first-child,
 .table_div:last-child .comparison_table td:first-child{
