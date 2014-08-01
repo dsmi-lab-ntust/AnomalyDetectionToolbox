@@ -1,29 +1,29 @@
 function [suspicious_index lof] = LOF(A, k)
-%#####################################################################
-%# Local Outlier Factor                                              #
-%# Authors: Markus M. Breunig, Hans-Peter Kriegel,                   # 
-%#          Raymond T. Ng, J?rg Sander                               #
-%# Original paper :                                                  #
-%# LOF: Identifying Density-Based Local Outliers                     #
-%# e-mail : { breunig | kriegel | sander }                           #
-%#          @dbs.informatik.uni-muenchen.de                          #
-%#          rng@cs.ubc.ca                                            #
-%# Programmer: Yi-Ren Yeh(yirenyeh@gmail.com)                        #
-%# modified by: Zi-Wen Gui(evan176@hotmail.com)                      #
-%#                                                                   #
-%#                                                                   #
-%# Inputs                                                            #
-%#   A: the data matrix, each row represents an instance             #
-%#   k: the number of nearest neighbors, specified as an integer or  #
-%#      as a fraction of the total number of data points             #
-%#                                                                   #
-%# Outputs                                                           #
-%#   lof: the local outlier factor for each instance                 #
-%#   suspicious_index: the ranking of instances according to their   #
-%#                     suspicious score                              #
-%#                     For example, suspicious_index(i)=j means the  #
-%#                     ith instance is in jth position in the ranking#
-%#####################################################################
+%
+% Local Outlier Factor                                              
+% Authors: Markus M. Breunig, Hans-Peter Kriegel,                    
+%          Raymond T. Ng, J?rg Sander                               
+% Original paper :                                                  
+% LOF: Identifying Density-Based Local Outliers                     
+% e-mail : { breunig | kriegel | sander }                           
+%          @dbs.informatik.uni-muenchen.de                          
+%          rng@cs.ubc.ca                                            
+% Programmer: Yi-Ren Yeh(yirenyeh@gmail.com)                        
+% modified by: Zi-Wen Gui(evan176@hotmail.com)                      
+%                                                                   
+%                                                                   
+% Inputs                                                            
+%   A: the data matrix, each row represents an instance             
+%   k: the number of nearest neighbors, specified as an integer or  
+%      as a fraction of the total number of data points             
+%                                                                   
+% Outputs                                                           
+%   lof: the local outlier factor for each instance                 
+%   suspicious_index: the ranking of instances according to their   
+%                     suspicious score                              
+%                     For example, suspicious_index(i)=j means the  
+%                     ith instance is in jth position in the ranking
+%
 
 if k < 1
     [numrows ~] = size(A);

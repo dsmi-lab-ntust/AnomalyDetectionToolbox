@@ -1,14 +1,14 @@
 %This is dynamic range checking function
-%---------------------------------------------------------------
+%
 %Input
 %	Mean	: average of previous data
 %	Var     : variance of previous data
 %	x		: new arriving data
 %	Mul		: number of standard deviation
-%---------------------------------------------------------------
+%
 %Output
 %	result	: detection result
-%---------------------------------------------------------------
+%
 
 function [result]=detect(Mean, Var, x , Mul)
     if Mul <= 0
@@ -17,5 +17,5 @@ function [result]=detect(Mean, Var, x , Mul)
     end
     dim = size(x)
     result = zeros(dim(1), 1);
-    result(x > ( Mean + Mul * sqrt(Var) ) || x < ( Mean - Mul * sqrt(Var) )) = 1 ;
+    result(x > ( Mean + Mul * sqrt(Var) ) || x < ( Mean  Mul * sqrt(Var) )) = 1 ;
 end
