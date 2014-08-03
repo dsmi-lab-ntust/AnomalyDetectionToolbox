@@ -1,23 +1,23 @@
 function [suspicious_index cof sbn_paths] = COF(A, k)
-%
-% Connectivity-based Outlier Factor                                      
-% Reference :                                                            
-% Enhancing Effectiveness of Outlier Detections for Low Density Patterns 
-% Authors: Jian Tang, Zhixiang Chen, Ada Wai-chee Fu, David W. Cheung    
-%                                                                        
-%                                                                        
-% Inputs                                                                 
-%   A: the data matrix, each row represents an instance                  
-%   k: the number of nearest neighbors, specified as an integer or       
-%      as a fraction of the total number of data points                  
-%                                                                        
-% Outputs                                                                
-%   lof: the local outlier factor for each instance                      
-%   suspicious_index: the ranking of instances according to their        
-%                     suspicious score                                   
-%                     For example, suspicious_index(i)=j means the       
-%                     ith instance is in jth position in the ranking     
-%
+%##########################################################################
+%# Connectivity-based Outlier Factor                                      #
+%# Reference :                                                            #
+%# Enhancing Effectiveness of Outlier Detections for Low Density Patterns #
+%# Authors: Jian Tang, Zhixiang Chen, Ada Wai-chee Fu, David W. Cheung    #
+%#                                                                        #
+%#                                                                        #
+%# Inputs                                                                 #
+%#   A: the data matrix, each row represents an instance                  #
+%#   k: the number of nearest neighbors, specified as an integer or       #
+%#      as a fraction of the total number of data points                  #
+%#                                                                        #
+%# Outputs                                                                #
+%#   lof: the local outlier factor for each instance                      #
+%#   suspicious_index: the ranking of instances according to their        #
+%#                     suspicious score                                   #
+%#                     For example, suspicious_index(i)=j means the       #
+%#                     ith instance is in jth position in the ranking     #
+%##########################################################################
 
 if k < 1
     [numrows ~] = size(A);
