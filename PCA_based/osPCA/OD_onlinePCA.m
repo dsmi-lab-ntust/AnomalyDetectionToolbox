@@ -1,13 +1,13 @@
 function [suspicious_index suspicious_score u] = OD_onlinePCA(A, beta)
-%==========================================================================
+%
 % Outlier detection via over-sampling online PCA
-%--------------------------------------------------------------------
+%
 % This function is used for outlier detection. The main idea is using 
 % the variation of the first principal direction detect the outlierness
 % of each instance(event) in the leave one out procedure. Here the 
 % over-sampling on target instance is also used for enlarge the 
 % outlierness
-%--------------------------------------------------------------------------
+%
 %
 % input
 %   A: the data matrix, each row represents an instance
@@ -24,7 +24,7 @@ function [suspicious_index suspicious_score u] = OD_onlinePCA(A, beta)
 % References
 % Anomaly Detection via Over-Sampling Principal Component Analysis                                                                     
 % Send your comment and inquiry to Dr. Yi-Ren Yeh (yirenyeh@gmail.com)        
-%==========================================================================
+%
 
 [n p]= size(A);
 

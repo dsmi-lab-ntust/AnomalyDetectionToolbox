@@ -1,18 +1,17 @@
+function [Mean2, Var2] = online_UpdateWin(Mean, Var, old_x, new_x, n)
 %Using this function to update mean and variance
-%---------------------------------------------------------------
+%
 %Input
 %	Mean	: average of previous data
 %	Var     : variance of previous data
 %	old_x	: oldest data in sliding window
 %	new_x	: new arriving data
 %	n		: number of previous data
-%---------------------------------------------------------------
+%
 %Output
 %	Mean2	: result of average by online updating average with new data
 %	Var2	: result of variance by online updating average with new data
-%---------------------------------------------------------------
-
-function [Mean2, Var2] = online_UpdateWin(Mean, Var, old_x, new_x, n)
+%
     dim = size(Var);
 	if n <= 0
 		Mean = x;

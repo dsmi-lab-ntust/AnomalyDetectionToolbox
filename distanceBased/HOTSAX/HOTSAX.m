@@ -1,14 +1,14 @@
 function [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n, strParam)
-% =========================================================================
+% 
 % HOTSAX is used to find an anomaly (discord) in timeseries data.
 % Based on the paper
 % HOT SAX: Efficiently Finding the Most Unusual Time Series Subsequence
 % Author    : Eamonn Keogh, Jessica Lin, Ada Fu
 % Programmer : Po-Han Huang
-% -------------------------------------------------------------------------
+% 
 % [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n);
-% -------------------------------------------------------------------------
-% Inputs -----
+% 
+% Inputs 
 %   data               [m x 1] : Input time series sequence.
 %   n                  [1 x 1] : Sliding window size
 %   strParam           [1 x 1] : parameters
@@ -17,12 +17,12 @@ function [best_so_far_dist, best_so_far_loc] = HOTSAX(data, n, strParam)
 %                                sequence while making symbols using SAX.
 %     .a               [1 x 1] : alphabet size is the number of discrete
 %                                symbols.
-% -------------------------------------------------------------------------
-% Outputs ----
+% 
+% Outputs
 %   best_so_far_dist   [1 x 1] : The best result(or can be consider as the
 %                                 farthest distance in whole case).
 %   best_so_far_loc    [1 x 1] : The location of the discord.
-% =========================================================================
+%
 
 % setting up parameters
 nseg = 3; alphabet_size = 3;

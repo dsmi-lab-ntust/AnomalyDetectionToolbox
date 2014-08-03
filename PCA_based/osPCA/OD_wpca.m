@@ -1,13 +1,13 @@
 function [suspicious_index suspicious_score u] = OD_wpca(A,ratio)
-%==========================================================================
+%
 % Outlier detection via over-sampling PCA
-%--------------------------------------------------------------------------
+%
 % This function is used for outlier detection. The main idea is using 
 % the variation of the first principal direction detect the outlierness
 % of each instance(event) in the leave one out procedure. Here the 
 % over-sampling on target instance is also used for enlarge the 
 % outlierness
-%--------------------------------------------------------------------------
+%
 %
 % input
 %   A: the data matrix, each row represent an instance
@@ -21,7 +21,7 @@ function [suspicious_index suspicious_score u] = OD_wpca(A,ratio)
 %                     For example, suspicious_index(i)=j meansthe ith 
 %                     instance is in jth position in the ranking.
 %
-%==========================================================================
+%
  
 % the threshold in Power Method
 tol=10^(-20);maxiter=500;
