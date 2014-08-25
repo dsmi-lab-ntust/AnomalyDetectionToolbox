@@ -1,0 +1,7 @@
+mex -setup
+mex cdtw_dist.c
+
+
+
+resource: http://www.mathworks.com/matlabcentral/fileexchange/12319-constrained-dynamic-time-warping-distance-measure
+
