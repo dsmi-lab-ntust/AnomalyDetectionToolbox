@@ -1,4 +1,4 @@
-function [score  ] = DTW_AF( unseenSeqs,historicalSeqsCell,k ,mode)
+function [score  ] = DTW_AF( unseenSeqs,historicalSeqsCell,k ,outputMode,approximateParams)
 %
 %                                    
 % Referred paper :                                                  
@@ -13,11 +13,14 @@ function [score  ] = DTW_AF( unseenSeqs,historicalSeqsCell,k ,mode)
 %       each instance of data can be different length. 
 %   k: 
 %       parameter for computing k-distance             
-%   mode: 
-%       1: ratio of k-distance(unseenSeq) to median(historicalSeqsCell),
+%   outputMode: 
+%       1: the output is ratio of k-distance(unseenSeq) to median(historicalSeqsCell),
 %       but very time-consuming to compute median(historicalSeqsCell).
-%       2: simply compute k-distance(unseenSeq) as score
-% 
+%       2: simply compute k-distance(unseenSeq) as output score
+%   approximateParams: 
+%       We provided a approximate version of DTW for speeding up.
+%       approximateParams should be 2xN matrix, such as [window, radius]
+%       which is described in adtw.m file
 % Outputs                                                           
 %   score: 1x1 vector                                                
 %      suspicious score for unseen data                   
@@ -26,21 +29,29 @@ function [score  ] = DTW_AF( unseenSeqs,historicalSeqsCell,k ,mode)
 
 
     if nargin <4
-        mode = 1;
+        outputMode = 1;
     end
     score = zeros(size(unseenSeqs));
-    if mode ==2
+    if outputMode ==2
         for i = 1:length(unseenSeqs)
             unseenSeq=unseenSeqs{i};
-            [ score(i)] = DTW_kDist(  unseenSeq,historicalSeqsCell,k );
+            if nargin == 5
+                [ score(i)] = DTW_kDist(  unseenSeq,historicalSeqsCell,k,approximateParams );
+            else
+                [ score(i)] = DTW_kDist(  unseenSeq,historicalSeqsCell,k );
+            end
         end
     
-    elseif mode ==1
+    elseif outputMode ==1
       
         [ median_kdist ] = DTW_median( historicalSeqsCell,k );
         for i = 1:length(unseenSeqs)
             unseenSeq=unseenSeqs{i};
-            [ kdist ]= DTW_kDist(  unseenSeq,historicalSeqsCell,k);
+            if nargin == 5
+                [ kdist ]= DTW_kDist(  unseenSeq,historicalSeqsCell,k,approximateParams);
+            else
+                [ kdist ]= DTW_kDist(  unseenSeq,historicalSeqsCell,k);
+            end
             score(i)=kdist/median_kdist;
         end
     end
