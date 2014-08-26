@@ -6,8 +6,8 @@ function [score  ] = DTW_AF( unseenSeqs,historicalSeqsCell,k ,outputMode,approxi
 % Programmer: Jing-Yao Lin                                        
 %                                                              
 % Inputs                                                            
-%   targetSeq: 
-%       unseen time series data with 1xN matrix
+%   unseenSeqs: 
+%       unseen time series data 1xN instances which are stored in cell format
 %   historicalSeqsCell: 
 %       cell which includes normal time series data only. 
 %       each instance of data can be different length. 

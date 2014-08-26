@@ -1,0 +1,30 @@
+currentPath = cd
+cd ../..
+rootPath = cd
+cd util
+[ normalSeqCell ] = cellReader( [rootPath '\benchmarks\Time Series Data\Synthetic Wave\normalSeqs.data.csv'] );
+[ unseenSeqCell ] = cellReader( [rootPath '\benchmarks\Time Series Data\Synthetic Wave\unseenSeqs.data.csv'] );
+
+figure;
+title('Normal Synthetic Waves')
+hold on;
+for i = 1:length(normalSeqCell)
+    plot(normalSeqCell{i});
+end
+
+cd(currentPath)
+tic
+[score  ] = DTW_AF( unseenSeqCell{1},normalSeqCell,5 )
+figure;
+title('Unseen Synthetic Wave 1')
+plot(normalSeqCell{i});
+disp(['The anomaly score of unseen synthetic wave 1 is' num2str(score)])
+toc
+tic
+[score  ] = DTW_AF( unseenSeqCell{39},normalSeqCell,5 ) % it is heavy to compute median of k-distance
+figure;
+title('Unseen Synthetic Wave 39')
+plot(normalSeqCell{i});
+disp(['The anomaly score of unseen synthetic wave 39 is' num2str(score)])
+toc
+clearvars currentPath rootPath
