@@ -29,7 +29,7 @@ function [score  ] = DTW_AF( unseenSeqs,historicalSeqsCell,k ,outputMode,approxi
 
 
     if nargin <4
-        outputMode = 1;
+        outputMode = 2;
     end
     score = zeros(size(unseenSeqs));
     if outputMode ==2

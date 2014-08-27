@@ -42,4 +42,4 @@ axisCurrent = axis;
 axis([axisCurrent(1) axisCurrent(2) axisNormal(3) axisNormal(4)*2.0])
 disp(['Anomaly score of unseen synthetic wave 38 (normal) is ' num2str(score)])
 toc
-clearvars currentPath rootPath i score 
+clearvars currentPath rootPath i score s axisNormal axisCurrent
