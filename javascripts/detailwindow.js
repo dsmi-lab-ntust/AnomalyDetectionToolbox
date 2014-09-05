@@ -109,6 +109,9 @@ function changeDoc(page_name,active_name,target_name,id){
 					childNodes[x].className = "";
 				}
 				active_li.className = "active";
+				if(active_name == "Benchmark"){
+					change_list();
+				}
 			}
 			if(id){
 				location.hash = "#"+id;
