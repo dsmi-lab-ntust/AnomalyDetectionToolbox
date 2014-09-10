@@ -170,9 +170,10 @@ function getBenchmarkJSON(method,page_name){
 		document.getElementById("showJSON").innerHTML = xmlhttp.responseText;
 	};
 	xhr.onerror = function() {
-		alert('Woops, there was an error making the request.');
+		//alert('Woops, there was an error making the request.');
 	};
 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.withCredentials = true;
 	xhr.send("action=JSON");
 }
 getBenchmarkJSON("POST","http://anomalydetectiontoolbox.appspot.com/action/benchmark");
