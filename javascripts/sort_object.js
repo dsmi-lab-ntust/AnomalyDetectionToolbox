@@ -167,7 +167,7 @@ function getBenchmarkJSON(method,page_name){
 	}
 	// Response handlers.
 	xhr.onload = function() {
-		document.getElementById("showJSON").innerHTML = xmlhttp.responseText;
+		document.getElementById("showJSON").innerHTML = xhr.responseText;
 	};
 	xhr.onerror = function() {
 		//alert('Woops, there was an error making the request.');
