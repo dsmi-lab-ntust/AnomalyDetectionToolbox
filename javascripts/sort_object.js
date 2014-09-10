@@ -141,3 +141,38 @@ function sort_init(){
 	}
 }
 sort_init();
+
+// Create the XHR object.
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+function getBenchmarkJSON(method,page_name){
+	// All HTML5 Rocks properties support CORS.
+	var xhr = createCORSRequest(method, page_name);
+	if (!xhr) {
+		alert('CORS not supported');
+		return;
+	}
+	// Response handlers.
+	xhr.onload = function() {
+		document.getElementById("showJSON").innerHTML = xmlhttp.responseText;
+	};
+	xhr.onerror = function() {
+		alert('Woops, there was an error making the request.');
+	};
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.send("action=JSON");
+}
+getBenchmarkJSON("POST","http://anomalydetectiontoolbox.appspot.com/action/benchmark");
