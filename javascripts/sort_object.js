@@ -212,5 +212,3 @@ function getBenchmarkJSON(method,page_name){
 	}
 	xhr.send(parameter);
 }
-getBenchmarkJSON("POST","http://anomalydetectiontoolbox.appspot.com/action/benchmark");
-check_color();

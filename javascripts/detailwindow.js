@@ -110,7 +110,8 @@ function changeDoc(page_name,active_name,target_name,id){
 				}
 				active_li.className = "active";
 				if(active_name == "Benchmark"){
-					change_list();
+					getBenchmarkJSON("POST","http://anomalydetectiontoolbox.appspot.com/action/benchmark");
+					check_color();
 				}
 			}
 			if(id){
