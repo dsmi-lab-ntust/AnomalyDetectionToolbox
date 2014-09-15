@@ -148,6 +148,7 @@ function change_list(target_array){
 	}
 	
 	show_list.appendChild(ul);
+	document.getElementById("benchmark_page").innerHTML = "";
 }
 
 // Create the XHR object.
