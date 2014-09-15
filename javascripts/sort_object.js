@@ -1,3 +1,4 @@
+/*
 function sort_object(name,target_html,type,test_index){
 	this.name = name;
 	this.target_html = target_html;
@@ -60,56 +61,6 @@ function change_list(select_sort_obj){
 	}
 }
 
-
-/*
-function change_list(select_sort_obj){
-	var select_value = select_sort_obj.options[select_sort_obj.selectedIndex].value;
-	var show_list = document.getElementById("benchmark_list");
-	var show_list_hidden = document.getElementById("benchmark_list_hidden");
-	// remove all child node
-	var fc = show_list.firstChild;
-	while( fc ) {
-		show_list.removeChild( fc );
-		fc = show_list.firstChild;
-	}
-	// remove all child node
-	var fc = show_list_hidden.firstChild;
-	while( fc ) {
-		show_list_hidden.removeChild( fc );
-		fc = show_list_hidden.firstChild;
-	}
-
-	// create time data list
-	var time_li = document.createElement("li");
-	time_li.setAttribute("type","circle");
-	time_li.innerHTML = "Time Series Data";
-	time_li.appendChild(create_list(time_array));
-	
-	// create vector data list
-	var vector_li = document.createElement("li");
-	vector_li.setAttribute("type","circle");
-	vector_li.innerHTML = "Vector Data";
-	vector_li.appendChild(create_list(vector_array));
-	
-	show_list.appendChild(time_li);
-	show_list.appendChild(vector_li);
-
-	// create test_index list
-	var test_li = document.createElement("li");
-	test_li.setAttribute("type","circle");
-	test_li.innerHTML = "test_index";
-	test_li.appendChild(create_list(test_index_array));
-	
-	show_list_hidden.appendChild(test_li);
-	
-	if(select_value == 'type'){
-		 $('#show_list').quicksand( $('#show_list_hidden li') );
-	}else{
-		 $('#show_list_hidden').quicksand( $('#show_list li') );
-	}
-}
-*/
-
 var object_array = new Array();
 var time_array = new Array();
 var vector_array = new Array();
@@ -141,6 +92,63 @@ function sort_init(){
 	}
 }
 sort_init();
+*/
+var type_array = [false,false];
+var sort_array = [false];
+
+function change_status(target_array,target_index){
+	if(target_array == "type"){
+		type_array[target_index] = !type_array[target_index];
+	}
+	if(target_array == "sort"){
+		sort_array[target_index] = !sort_array[target_index];
+	}
+	getBenchmarkJSON("POST","http://anomalydetectiontoolbox.appspot.com/action/benchmark");
+	check_color();
+}
+
+function check_color(){
+	var type0 = document.getElementById("type0");
+	var type1 = document.getElementById("type1");
+	var sort0 = document.getElementById("sort0");
+	type0.className = "uncheck-color";
+	type1.className = "uncheck-color";
+	sort0.className = "uncheck-color";
+	if(type_array[0]){
+		type0.className = "check-color";
+	}
+	if(type_array[1]){
+		type1.className = "check-color";
+	}
+	if(sort_array[0]){
+		sort0.className = "check-color";
+	}
+}
+
+function change_list(target_array){
+	var show_list = document.getElementById("benchmark_list");
+	// remove all child node
+	var fc = show_list.firstChild;
+	while( fc ) {
+		show_list.removeChild( fc );
+		fc = show_list.firstChild;
+	}
+	
+	var ul = document.createElement("ul");
+	for(target_array_index in target_array){
+		var each_target_data = target_array[target_array_index];
+		var each_target_li = document.createElement("li");
+		var each_target_a = document.createElement("a");
+		each_target_a.setAttribute("href","javascript:void(0);");
+		each_target_a.setAttribute("onclick","changeDoc('" + each_target_data.target_html + "',null,'benchmark_page');");
+		each_target_a.innerHTML = each_target_data.name;
+		
+		each_target_li.appendChild(each_target_a);
+		ul.appendChild(each_target_li);
+	}
+	
+	show_list.appendChild(ul);
+}
 
 // Create the XHR object.
 function createCORSRequest(method, url) {
@@ -168,12 +176,41 @@ function getBenchmarkJSON(method,page_name){
 	// Response handlers.
 	xhr.onload = function() {
 		var jsonObj = JSON.parse(xhr.responseText);
+		change_list(jsonObj);
 	};
 	xhr.onerror = function() {
 		//alert('Woops, there was an error making the request.');
 	};
 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	xhr.withCredentials = true;
-	xhr.send("action=JSON");
+	var parameter = "action=benchmarkJSON";
+	var type_array_str = "";
+	for(type_array_index in type_array){
+		if(type_array[type_array_index]){
+			if(type_array_str == ""){
+				type_array_str += "type_condition=" + type_array_index;
+			}else{
+				type_array_str += "," + type_array_index;
+			}
+		}
+	}
+	var sort_array_str = "";
+	for(sort_array_index in sort_array){
+		if(sort_array[sort_array_index]){
+			if(sort_array_str == ""){
+				sort_array_str += "sort_condition=" + sort_array_index;
+			}else{
+				sort_array_str += "," + sort_array_index;
+			}
+		}
+	}
+	if(type_array_str != ""){
+		parameter += "&" + type_array_str;
+	}
+	if(sort_array_str != ""){
+		parameter += "&" + sort_array_str;
+	}
+	xhr.send(parameter);
 }
 getBenchmarkJSON("POST","http://anomalydetectiontoolbox.appspot.com/action/benchmark");
+check_color();

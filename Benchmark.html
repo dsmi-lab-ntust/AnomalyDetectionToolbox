@@ -1,11 +1,26 @@
 <div id="benchmark_wrapper">
+<div id="benchmark_condition">
+<div id="type_list">
+Data Type
+<ul>
+<li><a id="type0" href="javascript:void(0);" onclick="change_status('type','0');">Time Series Data</a></li>
+<li><a id="type1" href="javascript:void(0);" onclick="change_status('type','1');">Vector Data</a></li>
+</ul>
+</div>
+<div id="sort_list">
+Sort by
+<ul>
+<li><a id="sort0" href="javascript:void(0);" onclick="change_status('sort','0');">Numbers of Data</a></li>
+</ul>
+</div>
+</div>
 <div id="benchmark_menu">
-	sort by 
+	<!--sort by 
 	<select onChange="change_list(this);">
 		<option>type</option>
 		<option>test_index</option>
-	</select>
-	<ul id="benchmark_list">		
+	</select>-->
+	<ul id="benchmark_list">
 		<!--
 		<li type="circle">Time Series Data</li>
 			<ul>
@@ -29,8 +44,6 @@
 			<li><a href="javascript:void(0);" onclick="changeDoc('Benchmark/Wine_Quality.html',null,'benchmark_page');">Wine Quality</a></li>
 			</ul>
 		-->
-	</ul>
-	<ul id="benchmark_list_hidden" style="display: none">	
 	</ul>
 </div>
 <div id="benchmark_page">

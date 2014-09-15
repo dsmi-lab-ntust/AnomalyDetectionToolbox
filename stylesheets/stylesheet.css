@@ -730,6 +730,23 @@ footer .owner p a {
 	display:inline-block;
 }
 
+#benchmark_condition{
+	width:1000px;
+	display:inline-block;
+	margin-top:10px;
+	margin-bottom:10px;
+	box-shadow:0px 0px 3px rgba(20%,20%,40%,0.5);
+	background-color: #EBEFF4;
+}
+
+#benchmark_condition #type_list,
+#benchmark_condition #sort_list{
+	width:200px;
+	float:left;
+	display:inline;
+	padding:10px;
+}
+
 #benchmark_menu,
 #algorithm_menu{
 	width:200px;
@@ -749,6 +766,23 @@ footer .owner p a {
 	padding-right:50px;
 	font-size:18px;
 	/*font-weight:bold;*/
+}
+
+.check-color{
+	background-color:rgba(250,250,200,.8);
+}
+.uncheck-color{
+	background-color:rgba(0,0,0,0);
+}
+#type_list a,
+#sort_list a {
+  color: #63a52a;
+  text-decoration: underline;
+}
+#type_list a:visited,
+#sort_list a:visited{
+  color: #63a52a;
+  text-decoration: underline;
 }
 
 .infoTable{
