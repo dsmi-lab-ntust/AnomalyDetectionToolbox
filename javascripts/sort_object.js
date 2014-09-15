@@ -140,8 +140,8 @@ function change_list(target_array){
 		var each_target_li = document.createElement("li");
 		var each_target_a = document.createElement("a");
 		each_target_a.setAttribute("href","javascript:void(0);");
-		each_target_a.setAttribute("onclick","changeDoc('" + each_target_data.target_html + "',null,'benchmark_page');");
-		each_target_a.innerHTML = each_target_data.name;
+		each_target_a.setAttribute("onclick","changeDoc('" + each_target_data.benchmark_html + "',null,'benchmark_page');");
+		each_target_a.innerHTML = each_target_data.benchmark_name;
 		
 		each_target_li.appendChild(each_target_a);
 		ul.appendChild(each_target_li);
