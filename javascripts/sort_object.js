@@ -105,6 +105,7 @@ function change_status(target_array,target_index){
 	}
 	getBenchmarkJSON("POST","http://anomalydetectiontoolbox.appspot.com/action/benchmark");
 	check_color();
+	document.getElementById("benchmark_page").innerHTML = "";
 }
 
 function check_color(){
@@ -148,7 +149,6 @@ function change_list(target_array){
 	}
 	
 	show_list.appendChild(ul);
-	document.getElementById("benchmark_page").innerHTML = "";
 }
 
 // Create the XHR object.
@@ -212,4 +212,9 @@ function getBenchmarkJSON(method,page_name){
 		parameter += "&" + sort_array_str;
 	}
 	xhr.send(parameter);
+}
+
+function benchmark_init(){
+	getBenchmarkJSON("POST","http://anomalydetectiontoolbox.appspot.com/action/benchmark");
+	check_color();
 }
