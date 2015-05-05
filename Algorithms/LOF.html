@@ -1,7 +1,8 @@
 <ul>
-<li>Local Distance-based Outlier Factor</li>
-<li>Authors: Ke Zhang1, Marcus Hutter, Huidong Jin</li>
-<li>Original paper: A New Local Distance-Based Outlier Detection Approach for Scattered Real-World Data.</li>
+<li>Algorithm:Local Outlier Factor</li>
+<li>Authors: Markus M. Breunig†, Hans-Peter Kriegel†, Raymond T. Ng‡, Jörg Sander†</li>
+<li>Original paper: LOF: Identifying Density-Based Local Outliers</li>
 <li>Time Complexity: O(n^2)</li>
-<li>Description: This method detects outliers in data points by comparing LDOF of each points. Choose a point and find it's k-nearest neighbours. KNN distance of that point is sum of distances between it and each neighbours. KNN inner distance of that point is sum of distances between each other neighbours. Divide the KNN distance by the KNN inner distance is the LDOF of that point. If that point far away from clusters (as an outlier data), the KNN distance will be big and the KNN inner distance may be small. If a point is an outlier, it may get bigger LDOF value.</li>
+<li>Description: This method detects outliers in data points by comparing LOF of each points. Choose a point and find it's k-nearest neighbours. The LOF of an object is based on the single parameter of
+MinPts, which is the number of nearest neighbors used in defining the local neighborhood of the object. If a point is an outlier, it may get bigger LOF value.</li>
 </ul>
