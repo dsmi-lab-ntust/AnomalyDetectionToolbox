@@ -1,0 +1,5 @@
+Numenta is a machine intelligence company with its machine intelligence technology, hierarchical temporal memory (HTM).
+This benchmark is used to evaluate their anomaly detection algorithm. This dataset inculdes computer usage, such as CPU utilization, network bytes in, and disk read bytes.
+
+The original dataset is from:
+https://github.com/numenta/NAB
